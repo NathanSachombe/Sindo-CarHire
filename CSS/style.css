@@ -2,3 +2,24 @@ body {
     background-color: beige;
 }
 
+.navbar{
+    align-items: center;
+}
+
+#makeDropDown{
+    width: 50;
+    height: 10;
+}
+
+#transmissionDropDown{
+    width: 200;
+}
+
+#driveDropDown{
+     width: 150;
+}
+
+#search{
+    background-color: white;
+}
+
