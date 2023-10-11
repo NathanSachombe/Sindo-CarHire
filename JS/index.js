@@ -29,6 +29,14 @@ function renderCars(cars) {
   });
 }
 
+// Add click event on search button
+function search() {
+  const searchButton = document.getElementById('search');
+  searchButton.addEventListener('click', () => {
+    renderCars
+  });
+}
+
 // Fetch Request
 function getCars(make = 'toyota') {
     fetch(`https://api.api-ninjas.com/v1/cars?limit=10&make=${make}`,  {
@@ -43,6 +51,7 @@ function getCars(make = 'toyota') {
     }
 
     //const makeDropDown = document.getElementById("makeDropDown")
+// Add click event on search button
 
 
 
