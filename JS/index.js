@@ -7,25 +7,39 @@ document.addEventListener('DOMContentLoaded', () => {
   
 })
 
+// Fetch Request
+function getCars(make = 'toyota') {
+  fetch(`https://api.api-ninjas.com/v1/cars?limit=5&make=${make}`,  {
+      method: 'GET',
+      headers: {
+          'X-Api-Key': '8z1iHUxwTH21XU0mSBVpDQ==4047Fe2H0dOtTZWc'
+      },
+      })
+    .then(response => response.json())
+    .then(result => renderCars(result))
+    .catch(error => console.log('error', error));
+  }
+
 function renderCars(cars) {
-  const container = document.querySelector('.cars');
+  const container = document.getElementById('cars-container');
+  //const container = document.querySelector('cars-container');
 
   // clear the cars container
-  //container.innerHTML = '';
+  container.innerHTML = '';
 
   // iterate through each car and append to the dom
   cars.forEach((car) => {
     const carName = document.createElement('button');
-    carName.textContent = cars.model;
+    carName.textContent = car.model;
     carName.classList.add(
       'list-group-item',
       'list-group-item-action'
     );
     carName.addEventListener('click', () => {
-      renderCars(cars.model);
+      renderCars(car.model);
     });
 
-    //container.appendChild(carName);
+    container.appendChild(carName);
   });
 }
 
@@ -33,22 +47,11 @@ function renderCars(cars) {
 function search() {
   const searchButton = document.getElementById('search');
   searchButton.addEventListener('click', () => {
-    renderCars
+    renderCars(car.model)
   });
 }
 
-// Fetch Request
-function getCars(make = 'toyota') {
-    fetch(`https://api.api-ninjas.com/v1/cars?limit=10&make=${make}`,  {
-        method: 'GET',
-        headers: {
-            'X-Api-Key': '8z1iHUxwTH21XU0mSBVpDQ==4047Fe2H0dOtTZWc'
-        },
-        })
-      .then(response => response.json())
-      .then(result => renderCars(result))
-      .catch(error => console.log('error', error));
-    }
+
 
     //const makeDropDown = document.getElementById("makeDropDown")
 // Add click event on search button
