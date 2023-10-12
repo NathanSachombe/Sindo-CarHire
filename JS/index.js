@@ -51,3 +51,8 @@ textSearch.addEventListener("keyup", (e) => {
     getCars(make);
   }
 });
+
+//Configure hire car button
+  const hireCar = document.querySelector(".btn");
+  hireCar.addEventListener("click", () => window.alert("Car successfully hired!"));
+
