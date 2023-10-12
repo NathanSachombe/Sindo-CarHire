@@ -53,8 +53,13 @@ function search() {
 
 
 
-    //const makeDropDown = document.getElementById("makeDropDown")
-// Add click event on search button
+const textSearch = document.querySelector("#textSearch");
+textSearch.addEventListener("keyup", (e) => {
+  const make = textSearch.value;
+  if (e.keyCode === 13) {
+    getCars(make);
+  }
+});
 
 
 
