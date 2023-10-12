@@ -1,4 +1,4 @@
-console.log(1 + 1);
+//console.log(1 + 1);
 
 // Ensure the dom is loaded before doing anything
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Fetch Request
 function getCars(make = "toyota") {
-  fetch(`https://api.api-ninjas.com/v1/cars?limit=5&make=${make}`, {
+  fetch(`https://api.api-ninjas.com/v1/cars?limit=10&make=${make}`, {
     method: "GET",
     headers: {
       "X-Api-Key": "8z1iHUxwTH21XU0mSBVpDQ==4047Fe2H0dOtTZWc",
@@ -19,14 +19,15 @@ function getCars(make = "toyota") {
     .catch((error) => console.log("error", error));
 }
 
+// Function to render cars on the DOM
 function renderCars(cars) {
   const container = document.getElementById("cars-container");
-  //const container = document.querySelector('cars-container');
+  
 
-  // clear the cars container
+  // Clear the cars container
   container.innerHTML = "";
 
-  // iterate through each car and append to the dom
+  // Iterate through each car and append to the dom
   cars.forEach((car) => {
     const carName = document.createElement("button");
     carName.textContent = car.model;

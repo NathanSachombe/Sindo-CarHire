@@ -2,15 +2,14 @@ body {
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-AKUGjohqcQfvpClM1xEmxnSlTERpi8FGnQ&usqp=CAU);
 }
 
-header {
+h1 {
     color: blue;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    text-align: center;
 }
 
 .btn {
     background-color: green;
+    position: bottom;
 }
 
 #search{
@@ -18,8 +17,9 @@ header {
     position: top-right;
 }
 
-.list-group {
+#cars-container {
     font-weight: bold;
     font-size: larger;
-     color: blue;
+     color: black;
+     background-blend-mode: hard-light;
 }
