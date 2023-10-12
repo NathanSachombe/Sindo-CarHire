@@ -12,14 +12,21 @@ h1 {
     position: bottom;
 }
 
-#search{
+#search {
     background-color: white;
     position: top-right;
+    width: 20%;
+}
+
+#textSearch {
+      width: 40%;
+      
 }
 
 #cars-container {
     font-weight: bold;
     font-size: larger;
-     color: black;
-     background-blend-mode: hard-light;
+    color: black;
+    padding: 10px;
+     
 }
